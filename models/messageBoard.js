@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    const MessageBoard = sequelize.define("event", {
+    const MessageBoard = sequelize.define("messageboard", {
         name:{
             type: DataTypes.STRING,
             allowNull: false,         
@@ -25,6 +25,6 @@ module.exports = function (sequelize, DataTypes) {
 //         "name": "ENTER***HERE",
 //         "email": "ENTER****HERE",
 //         "raceName": "ENTER***HERE",
-//         "message": "ENTER***HERE",//         
+//         "message": "ENTER***HERE"//         
 //     }
 // }

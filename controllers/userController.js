@@ -10,6 +10,7 @@ const bcrypt = require("bcryptjs");
 //     res.send("Get all users")
 // })
 
+//CREATE A USER - user/create
 router.post('/create', function (req, res) {
     User.create({
         email:req.body.user.email,
@@ -29,6 +30,8 @@ router.post('/create', function (req, res) {
     .catch(err => res.status(500).json({error:err}))
 });
 
+
+//USER LOGIN - user/login
 router.post('/login', function (req, res) {
     User.findOne({where:{email:req.body.user.email}})
     .then(
