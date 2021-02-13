@@ -1,13 +1,13 @@
 // let express = require("express");
 // let router = express.Router();
 const router = require('express').Router();
-// const validateSession = require('../middleware/validate-session');
+const validateSession = require('../middleware/validate-session');
 const EventInfo = require('../db').import('../models/event')
 
 //TEST ENDPOINT
-router.get('/', function (req, res){
-    res.send("Get all user events")
-})
+// router.get('/', function (req, res){
+//     res.send("Get all user events")
+// })
 
 //CREATE AN EVENT - events/create
 router.post('/create', function (req, res) {
@@ -27,12 +27,12 @@ router.post('/create', function (req, res) {
     .catch(err => res.status(500).json({error:err}))
 });
 
-//GET ALL EVENTS FROM EVERYONE - events/
-//     router.get('/', function(req,res){
-//     EventInfo.findAll()
-//         .then((allEvents) => res.status(200).json(allEvents))
-//         .catch((err) => res.status(500).json({error:err}))
-// })
+// GET ALL EVENTS FROM EVERYONE - events/
+    router.get('/', function(req,res){
+    EventInfo.findAll()
+        .then((allEvents) => res.status(200).json(allEvents))
+        .catch((err) => res.status(500).json({error:err}))
+})
 
 //this has to either be the one above or below
 
