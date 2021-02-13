@@ -1,12 +1,12 @@
 module.exports = function (sequelize, DataTypes) {
-    const Event = sequelize.define("event", {
+    const Events = sequelize.define("event", {
         raceName:{
             type: DataTypes.STRING,
             allowNull: false,         
         },
         location:{
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: true,
         },
         date:{
             type: DataTypes.DATEONLY,
@@ -17,16 +17,16 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true,         
         },
         packList:{
-            type: DataTypes.STRING,
-            allowNull: true
+            type: DataTypes.STRING(1000),
+            allowNull: true,
         },
         lodging:{
             type: DataTypes.STRING,
             allowNull: true,         
         },
         travelPlan:{
-            type: DataTypes.STRING,
-            allowNull: true
+            type: DataTypes.STRING(1500),   
+            allowNull: true,
         },
     });
     return Event
