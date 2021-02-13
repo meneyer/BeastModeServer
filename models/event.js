@@ -8,6 +8,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: true,
         },
+        length:{
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         date:{
             type: DataTypes.DATEONLY,
             allowNull: true,         
@@ -29,17 +33,18 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true,
         },
     });
-    return Event
+    return Events
 };
 
-// {"event":
+// {"events":
 //     {
 //         "raceName": "ENTER***HERE",
 //         "location": "ENTER****HERE",
+//         "length" : "ENTER****HERE",
 //         "date": "ENTER***HERE",
 //         "startTime": "ENTER***HERE",
 //         "packList": "ENTER****HERE",
 //         "lodging": "ENTER***HERE",
-//         "travelPlan": "ENTER****HERE",
+//         "travelPlan": "ENTER****HERE"
 //     }
 // }
