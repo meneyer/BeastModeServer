@@ -32,6 +32,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING(1500),   
             allowNull: true,
         },
+        owner: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
     });
     return Events
 };
@@ -41,7 +45,7 @@ module.exports = function (sequelize, DataTypes) {
 //         "raceName": "ENTER***HERE",
 //         "location": "ENTER****HERE",
 //         "length" : "ENTER****HERE",
-//         "date": "ENTER***HERE",
+//         "date": "1981-03-04", <-- Format of date to use
 //         "startTime": "ENTER***HERE",
 //         "packList": "ENTER****HERE",
 //         "lodging": "ENTER***HERE",

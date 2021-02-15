@@ -15,7 +15,11 @@ module.exports = function (sequelize, DataTypes) {
         message:{
             type: DataTypes.STRING(2000),
             allowNull: false,         
-        },        
+        },   
+        owner: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }     
     });
     return MessageBoard
 };
@@ -25,6 +29,6 @@ module.exports = function (sequelize, DataTypes) {
 //         "name": "ENTER***HERE",
 //         "email": "ENTER****HERE",
 //         "raceName": "ENTER***HERE",
-//         "message": "ENTER***HERE"//         
+//         "message": "ENTER***HERE"
 //     }
 // }
