@@ -27,7 +27,7 @@ router.post('/create', validateSession, function (req, res) {
     .catch(err => res.status(500).json({error:err}))
 });
 
-//GET ALL EVENTS FROM EVERYONE - events/
+// GET ALL EVENTS FROM EVERYONE - events/
 //     router.get('/', function(req,res){
 //     EventInfo.findAll()
 //         .then((allEvents) => res.status(200).json(allEvents))
