@@ -2,7 +2,7 @@
 // let router = express.Router();
 const router = require('express').Router();
 let validateSession = require('../middleware/validate-session');
-const MessageBoard = require('../db').import('../models/messageboard');
+const MessageBoard = require('../db').import('../models/messageboard')
 
 //TEST ENDPOINT
 // router.get('/', function (req, res){

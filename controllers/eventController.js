@@ -28,11 +28,11 @@ router.post('/create', validateSession, function (req, res) {
 });
 
 // GET ALL EVENTS FROM EVERYONE - events/
-    router.get('/', function(req,res){
-    EventInfo.findAll()
-        .then((allEvents) => res.status(200).json(allEvents))
-        .catch((err) => res.status(500).json({error:err}))
-})
+//     router.get('/', function(req,res){
+//     EventInfo.findAll()
+//         .then((allEvents) => res.status(200).json(allEvents))
+//         .catch((err) => res.status(500).json({error:err}))
+// })
 
 //this has to either be the one above or below
 
