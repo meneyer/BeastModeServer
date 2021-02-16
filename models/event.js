@@ -1,10 +1,14 @@
 module.exports = function (sequelize, DataTypes) {
-    const Event = sequelize.define("event", {
+    const Events = sequelize.define("event", {
         raceName:{
             type: DataTypes.STRING,
             allowNull: false,         
         },
         location:{
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        length:{
             type: DataTypes.STRING,
             allowNull: true
         },
@@ -17,29 +21,34 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true,         
         },
         packList:{
-            type: DataTypes.STRING,
-            allowNull: true
+            type: DataTypes.STRING(1000),
+            allowNull: true,
         },
         lodging:{
             type: DataTypes.STRING,
             allowNull: true,         
         },
         travelPlan:{
-            type: DataTypes.STRING,
-            allowNull: true
+            type: DataTypes.STRING(1500),   
+            allowNull: true,
         },
+        owner: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
     });
-    return Event
+    return Events
 };
 
-// {"event":
+// {"events":
 //     {
 //         "raceName": "ENTER***HERE",
 //         "location": "ENTER****HERE",
-//         "date": "ENTER***HERE",
+//         "length" : "ENTER****HERE",
+//         "date": "1981-03-04", <-- Format of date to use
 //         "startTime": "ENTER***HERE",
 //         "packList": "ENTER****HERE",
 //         "lodging": "ENTER***HERE",
-//         "travelPlan": "ENTER****HERE",
+//         "travelPlan": "ENTER****HERE"
 //     }
 // }
