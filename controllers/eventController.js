@@ -46,6 +46,20 @@ router.get('/', validateSession, function(req,res){
             .catch((err) => res.status(500).json({error:err}))
     })
 
+router.get('/ascdate', validateSession, function(req,res){
+    let userid = req.user.id
+    EventInfo.findAll({
+        where: {owner: userid},
+        // [Op.and] : sequelize.query("SELECT * from public.events WHERE date >= '2021-03-04'::date") 
+        // [Op.and] :[sequelize.where(sequelize.fn('date', sequelize.col('date')), '>', '2018-11-07')]
+        // where: { date: {[Op.lt]: new Date() }},
+        order: [['date', 'ASC']],
+        limit: 3
+    })
+        .then((allEvents) => res.status(200).json(allEvents))
+        .catch((err) => res.status(500).json({error:err}))
+})
+
 //UPDATE AN EVENT - events/update/id
 router.put('/update/:travelPlanId', validateSession, function (req, res){
     const updateEventInfo = {
