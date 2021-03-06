@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+require("dotenv").config();
 // const sequelize = new Sequelize('beast-mode-server', 'postgres', 'password', {
 //     host: 'localhost',
 //     dialect: 'postgres'
