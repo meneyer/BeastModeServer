@@ -1,0 +1,9 @@
+heroku create beastmode-server
+
+https://beastmode-server.herokuapp.com/
+
+heroku addons:create heroku-postgresql:hobby-dev --app beastmode-server
+
+git add . 
+git commit -m "heroku deployment"
+git push heroku main
