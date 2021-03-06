@@ -30,6 +30,16 @@ router.get('/', function(req,res){
         .catch((err) => res.status(500).json({error:err}))
 })
 
+// GET ALL MESSAGES FROM ONE SPECIFIC USER - messageboard/yours
+router.get('/yours', validateSession, function(req,res){
+    let userid = req.user.id
+    MessageBoard.findAll({
+        where: {owner: userid}
+    })
+        .then((allEvents) => res.status(200).json(allEvents))
+        .catch((err) => res.status(500).json({error:err}))
+})
+
 // UPDATE A MESSAGE - messageboard/update/id
 router.put('/update/:messageId', validateSession, function (req, res){
         const updateMessage = {
